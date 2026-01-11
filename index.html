@@ -1,37 +1,78 @@
-<!-- TO ACHIEVE THIS TYPE IN "!" AND PRESS "TAB" -->
 <!DOCTYPE html>
-<!-- html below is a tag pair. "lang" is a language setting and is set to English. Html has 2 children: head and body -->
 <html lang="en">
-<!-- head below is a tag pair. It contains metadata about the document and links to external resources. -->
 <head>
-    <!-- meta below is a tag pair. It provides metadata about the HTML document. chrset = "UTF-8" is pulling all latin charachters-->
-    <meta charset="UTF-8">
-    <!-- Tag pair. Provides metadata about the HTML document. name = "viewport" is setting the viewport to the device's width and initial scale to 1.0 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Dev Starter</title>
-
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" href="/favicons/favicon-48x48.png" sizes="48x48" />
-    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
-    <link rel="shortcut icon" href="/favicons/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Web Dev Starter" />
-    <link rel="manifest" href="/favicons/site.webmanifest" />    
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- JavaScript -->
-     <!-- script:src and then press tab for shortcut-->
-    <script src="script.js" defer> </script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Image Border Cropper + AI Upscale</title>
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicons/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+  <link rel="manifest" href="favicons/site.webmanifest">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
-<!-- body below is a tag pair. It contains the content of the document. -->
 <body>
 
-    <h1>Web Dev Starter</h1>
+<div class="container">
+  <h1>Smart Image Border Cropper</h1>
+  <p>Remove solid borders, resize to 500px height, and apply offline AI super-resolution for enhanced quality.</p>
 
+  <div class="panel">
+
+    <div class="dropzone" id="dropzone">
+      Drag & Drop Images Here (PNG / JPG / WEBP) — or —
+      <br><br>
+      <input type="file" id="upload" accept="image/png,image/jpeg,image/webp" multiple>
+    </div>
+
+    <div class="controls">
+      <div>
+        <label>Border Tolerance</label>
+        <input type="range" id="tolerance" min="5" max="100" value="50">
+      </div>
+
+      <div>
+        <label>Output Format</label>
+        <select id="format">
+          <option value="image/png">PNG</option>
+          <option value="image/jpeg">JPEG</option>
+          <option value="image/webp">WebP</option>
+        </select>
+      </div>
+
+      <div>
+        <label>JPEG / WebP Quality</label>
+        <input type="range" id="quality" min="0.6" max="1" step="0.05" value="0.92">
+      </div>
+
+      <div>
+        <label>Image Enhancement</label>
+        <select id="ai">
+          <option value="off">Off (Fast)</option>
+          <option value="on" selected>On (2x Upscale + Sharpen)</option>
+        </select>
+      </div>
+
+      <button id="process">Process Images</button>
+      <button id="download">Download ZIP</button>
+    </div>
+
+    <div class="preview" id="preview"></div>
+  </div>
+
+  <footer>
+    100% client-side • Offline AI • Keeps filenames • Safe per-edge cropping
+  </footer>
+</div>
+
+  <!-- External Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  
+  <!-- Main Script -->
+  <script src="script.js"></script>
 </body>
 </html>
-

@@ -1,3 +1,110 @@
-body{
-    background: peachpuff;
+/* CSS Variables */
+:root {
+  --bg: #020617;
+  --panel: #0f172a;
+  --accent: #38bdf8;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #020617, #000);
+  color: var(--text);
+  padding: 30px;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Typography */
+h1 {
+  font-size: 2.1rem;
+  margin-bottom: 6px;
+}
+
+p {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+/* Panel */
+.panel {
+  background: var(--panel);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, .45);
+}
+
+/* Controls */
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background: #020617;
+  color: var(--text);
+  border: 1px solid #1e293b;
+}
+
+button:hover {
+  border-color: var(--accent);
+  cursor: pointer;
+}
+
+/* Dropzone */
+.dropzone {
+  border: 2px dashed #334155;
+  border-radius: 14px;
+  padding: 26px;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: .2s;
+}
+
+.dropzone.dragover {
+  border-color: var(--accent);
+  background: rgba(56, 189, 248, .05);
+}
+
+/* Preview Grid */
+.preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.preview img {
+  width: 100%;
+  border-radius: 8px;
+  background: #020617;
+  padding: 6px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 28px;
+  font-size: .8rem;
+  color: var(--muted);
 }
