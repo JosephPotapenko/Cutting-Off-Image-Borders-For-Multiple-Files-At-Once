@@ -33,7 +33,12 @@ Client-side tool to batch-remove solid borders, enhance, resize, and download up
 - For stubborn borders, raise tolerance (60–80). For over-cropping, lower it (15–30).
 
 ## Project Structure
-- [index.html](index.html) – UI layout, controls, and script/style includes.
-- [style.css](style.css) – Visual styling and layout.
-- [script.js](script.js) – Border detection, enhancement, resize, ZIP creation.
-- [favicons/](favicons) – Favicon and manifest assets.
+- [index.html](index.html) – UI layout, controls, and includes.
+- [assets/css/style.css](assets/css/style.css) – Visual styling and layout.
+- [assets/js/script.js](assets/js/script.js) – Border detection, enhancement, resize, ZIP creation.
+- Favicon is served online via Iconify (Tabler `crop`).
+
+## Development
+- No build step required; open [index.html](index.html) directly.
+- Keep assets under `assets/css` and `assets/js` for clarity.
+- Formatting is standardized via [.editorconfig](.editorconfig).
